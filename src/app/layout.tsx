@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localfont from "next/font/local";
 
 import AuthProvider from "@/components/auth/AuthProvider";
+import OnboardingBottomSheet from "@/components/onboard/OnboardBottomSheet";
 import ServiceWorkerRegister from "@/components/sw-register";
 
 import "@/styles/global.css";
@@ -57,9 +58,10 @@ export default function RootLayout({
       lang="ko"
       className={`${pretendard.className} scrollbar-hide flex items-center justify-center`}
     >
-      <body className="flex h-screen w-full max-w-[440px] overflow-y-scroll">
+      <body className="flex h-screen w-full max-w-[390px] overflow-y-scroll shadow-2xl">
         <ServiceWorkerRegister />
         <AuthProvider>{children}</AuthProvider>
+        <OnboardingBottomSheet />
       </body>
     </html>
   );
