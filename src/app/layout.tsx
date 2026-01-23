@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent", // 상태바 투명/검정 등 설정
   },
   icons: {
-    icon: "/images/zzillit-192.png",
-    apple: "/images/zzillit-192.png", // 아이폰은 이 이미지를 씀
+    icon: "/images/favicon.svg",
+    apple: "/images/favicon.svg", // 아이폰은 이 이미지를 씀
   },
 };
 
@@ -56,7 +56,7 @@ export default function RootLayout({
       lang="ko"
       className={`${pretendard.className} scrollbar-hide flex items-center justify-center`}
     >
-      <body className="flex h-screen w-full max-w-[440px] overflow-y-scroll">
+      <body className="flex h-screen w-full max-w-[390px] overflow-y-scroll shadow-2xl">
         <ServiceWorkerRegister />
         {children}
       </body>
