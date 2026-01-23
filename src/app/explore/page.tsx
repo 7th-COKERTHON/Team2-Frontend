@@ -48,7 +48,6 @@ export default function ExplorePage() {
       };
     });
 
-    // 핵심 수정: microtask로 상태 업데이트 넘김
     queueMicrotask(() => {
       setFeeds(processed);
       setIsLoading(false);
