@@ -1,8 +1,12 @@
+import { useState } from "react";
+
 import MenuIcon from "@/assets/kebab menu.svg";
 import MainIcon from "@/assets/level1.svg";
 
 import { DAY_TO_KOREAN } from "@/constants/dayToKorean";
 import { INDEX_COLOR_MAP } from "@/constants/indexColor";
+
+import { HabitMenuModal } from "./HabitMenuModal";
 
 interface HabitItemProps {
   title: string;
@@ -20,9 +24,25 @@ export const HabitItem = ({
   const colorSet = INDEX_COLOR_MAP[habitIdx % INDEX_COLOR_MAP.length];
   const { lightColor, mainColor, bgColor } = colorSet;
 
+  const [buttonClick, setButtonClick] = useState(false);
+  const [modalPos, setModalPos] = useState<{ x: number; y: number } | null>(
+    null,
+  );
+  const handleMenuClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    const rect = e.currentTarget.getBoundingClientRect();
+    const modalWidth = 390;
+    const x = Math.min(rect.right, window.innerWidth - modalWidth / 2);
+    setButtonClick(true);
+    setModalPos({ x: x, y: rect.bottom });
+  };
+
   return (
     <div className="bg-gray-10 relative flex h-[157px] w-full flex-col items-center justify-center rounded-[20px] shadow-[0_0_10px_-2px_rgba(0,0,0,0.10)]">
-      <button className="absolute top-[30px] right-[14px]">
+      <button
+        className="absolute top-[30px] right-[14px] cursor-pointer"
+        onClick={handleMenuClick}
+      >
         <MenuIcon />
       </button>
 
@@ -70,6 +90,21 @@ export const HabitItem = ({
           );
         })}
       </div>
+
+      {buttonClick && (
+        <>
+          {/* 배경 dim */}
+          <div
+            className="fixed inset-0 z-40 bg-gray-100/50"
+            onClick={() => setButtonClick(false)}
+          />
+
+          {/* 모달: 위치 그대로 */}
+          <div className="absolute top-[20px] right-[14px] z-50">
+            <HabitMenuModal />
+          </div>
+        </>
+      )}
     </div>
   );
 };
