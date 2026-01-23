@@ -15,7 +15,10 @@ export const HabitDeleteModal = ({ onClose }: HabitDeleteProps) => {
           </div>
         </div>
         <div className="flex flex-1 gap-[10px]">
-          <button className="bg-gray-30 text-gray-70 h-[38px] w-30 cursor-pointer rounded-[8px]">
+          <button
+            className="bg-gray-30 text-gray-70 h-[38px] w-30 cursor-pointer rounded-[8px]"
+            onClick={onClose}
+          >
             취소
           </button>
           <button
