@@ -48,7 +48,7 @@ export default function ExplorePage() {
           return {
             id: idx,
             username: "익명",
-            badHabit: habit.badBehavior,
+            badHabit: habit.badHabit,
             resolution: habit.resolution,
             date: new Date(randomTime),
           };
