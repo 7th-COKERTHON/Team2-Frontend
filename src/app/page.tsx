@@ -1,5 +1,7 @@
 "use client";
+import { Redirect } from "next";
 import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import EditIcon from "@/assets/edit.svg";
 import MainIcon from "@/assets/level1.svg";
@@ -15,6 +17,9 @@ import habitData from "@/mock/habitData.json";
 import { formatLocalDate } from "@/utils/formatLocalDate";
 
 const Home = () => {
+  // redirect("/login");
+  // return null;
+
   const today = new Date();
   const router = useRouter();
   return (

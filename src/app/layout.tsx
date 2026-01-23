@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localfont from "next/font/local";
 
-import AuthProvider from "@/components/auth/AuthProvider";
 import OnboardingBottomSheet from "@/components/onboard/OnboardBottomSheet";
 import ServiceWorkerRegister from "@/components/sw-register";
 
@@ -60,7 +59,7 @@ export default function RootLayout({
     >
       <body className="bg-gray-20 flex h-screen w-full max-w-[390px] overflow-y-scroll shadow-2xl">
         <ServiceWorkerRegister />
-        <AuthProvider>{children}</AuthProvider>
+        {children}
         <OnboardingBottomSheet />
       </body>
     </html>
