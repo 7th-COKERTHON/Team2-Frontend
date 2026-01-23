@@ -8,8 +8,7 @@ import { useAuthStore } from "@/stores/useAuthStore";
 export function UserProfile() {
   const { user, isLoggedIn } = useAuthStore();
 
-  if (!isLoggedIn || !user)
-    return <p className="text-gray-500">로그인이 필요합니다.</p>;
+  if (!isLoggedIn || !user) return;
 
   return (
     <div className="flex flex-col items-center gap-4 rounded-xl border p-6 shadow-sm">

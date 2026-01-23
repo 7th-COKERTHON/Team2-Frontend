@@ -1,4 +1,6 @@
-import NextAuth, { DefaultSession } from "next-auth";
+import { DefaultSession } from "next-auth";
+
+// NextAuth 제거
 
 declare module "next-auth" {
   interface Session {
@@ -6,6 +8,8 @@ declare module "next-auth" {
       accessToken?: string;
       refreshToken?: string;
       userId?: number;
+      accessTokenExpires?: number;
+      error?: string;
     } & DefaultSession["user"];
   }
 
@@ -21,5 +25,7 @@ declare module "next-auth/jwt" {
     accessToken?: string;
     refreshToken?: string;
     userId?: number;
+    accessTokenExpires?: number;
+    error?: string;
   }
 }
