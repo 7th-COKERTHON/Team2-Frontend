@@ -3,16 +3,21 @@ import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
+import { postHabit } from "@/app/api/habit";
+
 import CloseIcon from "@/assets/close.svg";
 
 import { CommonModal } from "@/components/common/CommonModal";
 import { FullButton } from "@/components/common/FullButton";
+
+import { HabitCreate } from "@/types/habit";
 
 const HabitAdd = () => {
   const router = useRouter();
   const [momentText, setMomentText] = useState(""); // 오늘 나의 찔릿한 순간
   const [habitText, setHabitText] = useState(""); // 나의 다짐
   const [modalOpen, setModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleClickClose = () => {
     if (momentText.length > 0 || habitText.length > 0) {
@@ -22,12 +27,17 @@ const HabitAdd = () => {
     }
   };
 
-  const handleSubmit = () => {
-    // TODO: 여기서 POST API 호출
-    console.log("오늘 나의 찔릿한 순간:", momentText);
-    console.log("나의 다짐:", habitText);
+  const handleSubmit = async () => {
+    try {
+      await postHabit({
+        badBehavior: momentText,
+        resolution: habitText,
+      } as HabitCreate);
 
-    router.back();
+      router.back(); // 등록 후 뒤로가기
+    } catch (error) {
+      console.error("Habit 등록 실패:", error);
+    }
   };
 
   return (
@@ -38,10 +48,12 @@ const HabitAdd = () => {
       >
         <CloseIcon className="h-5 w-5" />
       </button>
+
       <section className="absolute top-[70px] left-5 flex flex-col">
         <h2 className="text-h2 text-gray-100">고쳐야할 나쁜 습관을</h2>
         <h2 className="text-h2 text-gray-100">등록해 보세요</h2>
       </section>
+
       <section className="mt-[152px] flex flex-col gap-5 px-5">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-[5px]">
@@ -59,6 +71,7 @@ const HabitAdd = () => {
             />
           </div>
         </div>
+
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-[5px]">
             <h3 className="text-h3 text-gray-100">나의 다짐</h3>
@@ -76,10 +89,14 @@ const HabitAdd = () => {
           </div>
         </div>
       </section>
+
       <div className="fixed bottom-[30px] w-full max-w-[390px] px-5">
-        {/*TODO: 클릭시 post api 호출 */}
-        <FullButton title="등록하기" onClick={() => router.back()} />
+        <FullButton
+          title={loading ? "등록중..." : "등록하기"}
+          onClick={handleSubmit}
+        />
       </div>
+
       {modalOpen && (
         <CommonModal
           title="나가시겠습니까?"
@@ -96,4 +113,5 @@ const HabitAdd = () => {
     </main>
   );
 };
+
 export default HabitAdd;

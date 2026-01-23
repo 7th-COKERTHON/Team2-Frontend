@@ -1,26 +1,102 @@
 [
   {
-    "title": "엄마한테 화내지 않기",
-    "doDays": ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+    "id": 3,
+    "badBehavior": "물을 충분히 마시지 않았다",
+    "resolution": "하루 8잔 이상 물을 마시겠다",
+    "displayOrder": 1,
+    "isOriginal": true,
+    "originalHabitId": null,
+    "createdAt": "2026-01-23T11:57:23",
+    "updatedAt": "2026-01-23T11:57:23",
+    "isToday": false,
+    "weeklyCheckStatus": {
+      "monday": true,
+      "tuesday": true,
+      "wednesday": true,
+      "thursday": true,
+      "friday": true,
+      "saturday": false,
+      "sunday": false
+    }
   },
   {
-    "title": "욕하지 않기",
-    "doDays": ["MON", "TUE", "WED", "SAT", "SUN"]
+    "id": 4,
+    "badBehavior": "책을 읽지 않았다",
+    "resolution": "매일 30분 이상 독서하기",
+    "displayOrder": 2,
+    "isOriginal": true,
+    "originalHabitId": null,
+    "createdAt": "2026-01-23T11:57:23",
+    "updatedAt": "2026-01-23T11:57:23",
+    "isToday": false,
+    "weeklyCheckStatus": {
+      "monday": false,
+      "tuesday": true,
+      "wednesday": true,
+      "thursday": true,
+      "friday": true,
+      "saturday": false,
+      "sunday": false
+    }
   },
   {
-    "title": "때리지 않기",
-    "doDays": ["MON", "WED", "FRI", "SAT", "SUN"]
+    "id": 15,
+    "badBehavior": "밤 늦게까지 스마트폰을 봤다",
+    "resolution": "밤 11시 이후엔 스마트폰을 멀리 두고 책을 읽겠다",
+    "displayOrder": 2,
+    "isOriginal": true,
+    "originalHabitId": null,
+    "createdAt": null,
+    "updatedAt": null,
+    "isToday": false,
+    "weeklyCheckStatus": {
+      "monday": false,
+      "tuesday": true,
+      "wednesday": false,
+      "thursday": true,
+      "friday": true,
+      "saturday": false,
+      "sunday": false
+    }
   },
   {
-    "title": "길바닥에 쓰레기 버리지 않기",
-    "doDays": ["MON", "TUE", "THU", "FRI", "SAT", "SUN"]
+    "id": 16,
+    "badBehavior": "밤 늦게까지 스마트폰을 봤다1",
+    "resolution": "밤 11시 이후엔 스마트폰을 멀리 두고 책을 읽겠다1",
+    "displayOrder": 3,
+    "isOriginal": false,
+    "originalHabitId": 1,
+    "createdAt": null,
+    "updatedAt": null,
+    "isToday": true,
+    "weeklyCheckStatus": {
+      "monday": false,
+      "tuesday": false,
+      "wednesday": false,
+      "thursday": false,
+      "friday": false,
+      "saturday": false,
+      "sunday": false
+    }
   },
   {
-    "title": "핸드폰 사용 줄이기",
-    "doDays": ["MON", "TUE", "WED", "SAT", "SUN"]
-  },
-  {
-    "title": "야식 먹지 않기",
-    "doDays": ["MON", "WED", "THU", "FRI", "SAT", "SUN"]
+    "id": 17,
+    "badBehavior": "밤 늦게까지 스마트폰을 봤다1",
+    "resolution": "밤 11시 이후엔 스마트폰을 멀리 두고 책을 읽겠다1",
+    "displayOrder": 4,
+    "isOriginal": false,
+    "originalHabitId": 1,
+    "createdAt": null,
+    "updatedAt": null,
+    "isToday": false,
+    "weeklyCheckStatus": {
+      "monday": false,
+      "tuesday": false,
+      "wednesday": false,
+      "thursday": false,
+      "friday": false,
+      "saturday": false,
+      "sunday": false
+    }
   }
 ]

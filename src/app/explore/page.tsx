@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 
+import { getHabitsExplore } from "@/app/api/habit";
+
 import Dropdown from "@/assets/dropdown.svg";
 import Level1 from "@/assets/level1.svg";
 import Scrap from "@/assets/scrap.svg";
@@ -11,7 +13,7 @@ import ScrapFill from "@/assets/scrap_fill.svg";
 
 import { NavigationBar } from "@/components/common/NavigationBar";
 
-import rawHabitData from "@/mock/feedData.json";
+import { Habit } from "@/types/habit";
 
 interface FeedItem {
   id: number;
@@ -30,35 +32,43 @@ export default function ExplorePage() {
 
   const toastTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // 1. mock 데이터로 초기화 + 로컬스토리지 복구
+  // 1. API 호출 + 로컬스토리지 복구
   useEffect(() => {
-    const initialize = async () => {
-      const saved = localStorage.getItem("savedFeedIds");
-      if (saved) setSavedIds(JSON.parse(saved));
+    const fetchData = async () => {
+      try {
+        // Habits Explore API 호출
+        const habits: Habit[] = await getHabitsExplore(20);
 
-      const now = new Date();
-      const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+        // 로컬스토리지에서 저장된 feed 복구
+        const saved = localStorage.getItem("savedFeedIds");
+        if (saved) setSavedIds(JSON.parse(saved));
 
-      const processed: FeedItem[] = rawHabitData
-        .slice(0, 20)
-        .map((habit, idx) => {
+        const now = new Date();
+        const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+        // Habit -> FeedItem 변환 (랜덤 날짜 포함)
+        const processed: FeedItem[] = habits.map((habit, idx) => {
           const randomTime =
             oneWeekAgo.getTime() +
             Math.random() * (now.getTime() - oneWeekAgo.getTime());
           return {
-            id: idx,
+            id: idx, // 실제 API에 id가 있다면 habit.id 사용
             username: "익명",
-            badHabit: habit.badHabit,
+            badHabit: habit.badBehavior,
             resolution: habit.resolution,
             date: new Date(randomTime),
           };
         });
 
-      setFeeds(processed);
-      setIsLoading(false);
+        setFeeds(processed);
+      } catch (error) {
+        console.error("Habits Explore 불러오기 실패", error);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
-    initialize();
+    fetchData();
   }, []);
 
   // 2. 저장 액션
@@ -121,7 +131,7 @@ export default function ExplorePage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-center justify-between">
+                <div className="flex flex-col items-end justify-between">
                   <button
                     onClick={() => handleSave(feed.id)}
                     className="p-1 transition-transform active:scale-95"

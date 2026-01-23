@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import HomeIcon from "@/assets/navbar/home.svg";
-import MypageIcon from "@/assets/navbar/mypage.svg";
+import MyPageIcon from "@/assets/navbar/mypage.svg";
 import SearchIcon from "@/assets/navbar/search.svg";
 
 import { NavBarKey } from "@/constants/navBar";
@@ -12,9 +12,9 @@ export const NavigationBar = () => {
   const [activeKey, setActiveKey] = useState<NavBarKey>("home");
   const router = useRouter();
   return (
-    <section className="bg-gray-10 flex w-full items-center justify-center gap-25 rounded-t-[20px] px-5 pt-[15px] pb-[37px]">
+    <section className="bg-gray-10 z-90 flex w-full items-center justify-center gap-25 rounded-t-[20px] px-5 pt-[15px] pb-[37px]">
       <button
-        className="flex flex-col items-center gap-[5px]"
+        className="flex cursor-pointer flex-col items-center gap-[5px]"
         onClick={() => {
           setActiveKey("home");
           router.push("/");
@@ -31,7 +31,7 @@ export const NavigationBar = () => {
         </p>
       </button>
       <button
-        className="flex flex-col items-center gap-[5px]"
+        className="flex cursor-pointer flex-col items-center gap-[5px]"
         onClick={() => {
           setActiveKey("explore");
           router.push("/explore");

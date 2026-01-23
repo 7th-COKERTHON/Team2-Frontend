@@ -28,6 +28,7 @@ export const HabitItem = ({
   const [modalPos, setModalPos] = useState<{ x: number; y: number } | null>(
     null,
   );
+
   const handleMenuClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     const rect = e.currentTarget.getBoundingClientRect();
@@ -95,12 +96,12 @@ export const HabitItem = ({
         <>
           {/* 배경 dim */}
           <div
-            className="fixed inset-0 z-40 bg-gray-100/50"
+            className="fixed inset-0 z-80 bg-gray-100/50"
             onClick={() => setButtonClick(false)}
           />
 
           {/* 모달: 위치 그대로 */}
-          <div className="absolute top-[20px] right-[14px] z-50">
+          <div className="absolute top-[20px] right-[14px] z-90">
             <HabitMenuModal onClose={() => setButtonClick(false)} />
           </div>
         </>

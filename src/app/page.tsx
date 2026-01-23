@@ -25,10 +25,6 @@ const Home = () => {
   return (
     <main className="relative mb-[100px] h-screen w-full overflow-y-auto">
       <div className="h-full">
-        <button className="absolute top-[63px] right-5">
-          <EditIcon className="h-5 w-5" />
-        </button>
-
         <section className="absolute top-[50px] left-5 flex items-center gap-[5px]">
           <MainIcon className="h-11 w-[43px] text-pink-50" />
           <p className="text-h2 text-gray-100">{formatLocalDate(today)}</p>
