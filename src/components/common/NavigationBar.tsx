@@ -47,23 +47,6 @@ export const NavigationBar = () => {
           탐색하기
         </p>
       </button>
-      <button
-        className="flex cursor-pointer flex-col items-center gap-[5px]"
-        onClick={() => {
-          setActiveKey("mypage");
-          router.push("/mypage");
-        }}
-        key="mypage"
-      >
-        <MyPageIcon
-          className={`${activeKey === "mypage" ? "text-gray-70" : "text-gray-50"} h-5 w-5`}
-        />
-        <p
-          className={`${activeKey === "mypage" ? "text-gray-70" : "text-gray-50"} text-lab`}
-        >
-          마이페이지
-        </p>
-      </button>
     </section>
   );
 };
