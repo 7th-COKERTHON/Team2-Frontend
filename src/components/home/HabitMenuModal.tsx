@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { deleteHabit } from "@/app/api/habit";
+
 import { CommonModal } from "../common/CommonModal";
 
 interface HabitMenuModalProps {
@@ -7,6 +9,15 @@ interface HabitMenuModalProps {
 }
 export const HabitMenuModal = ({ onClose }: HabitMenuModalProps) => {
   const [deleteClick, setDeleteClick] = useState(false);
+  const onDelete = async (habitId: number) => {
+    try {
+      await deleteHabit(habitId);
+      console.log("삭제 성공!");
+      // await getHabit();
+    } catch (error) {
+      console.log("삭제 실패");
+    }
+  };
   return (
     <div className="bg-gray-10 flex flex-col gap-[10px] rounded-[12px] px-[25px] py-[15px]">
       <button
