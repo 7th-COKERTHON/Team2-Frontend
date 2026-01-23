@@ -3,7 +3,8 @@ import localfont from "next/font/local";
 
 import ServiceWorkerRegister from "@/components/sw-register";
 
-// import "@/styles/globals.css";
+import "@/styles/global.css";
+
 export const metadata: Metadata = {
   title: "찔릿 ZZILLIT",
   description: "무의식의 나쁜 행동을 바로 잡을 수 있는 웹 서비스",
