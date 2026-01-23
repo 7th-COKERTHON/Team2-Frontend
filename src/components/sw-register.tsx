@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 // 서비스 워커 등록 컴포넌트, 브라우저가 지원하면 sw.js 파일을 등록함.
-export default function ServiceWorkerRegister() {
+const ServiceWorkerRegister = () => {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
@@ -21,4 +21,6 @@ export default function ServiceWorkerRegister() {
   }, []);
 
   return null;
-}
+};
+
+export default ServiceWorkerRegister;
