@@ -1,17 +1,19 @@
 "use client";
 import MainIcon from "@/assets/level1.svg";
-import Logo from "@/assets/logo.svg";
 
 import { NavigationBar } from "@/components/common/NavigationBar";
 
+import { formatLocalDate } from "@/utils/formatLocalDate";
+
 const Home = () => {
+  const today = new Date();
   return (
-    <main className="flex w-full items-center justify-center">
-      <div className="flex items-center justify-center">
-        <MainIcon className="h-[92px] w-[91px]" />
-        <Logo className="h-[70px] w-[114px]" />
-      </div>
-      <nav className="fixed inset-x-0 bottom-0 mx-auto max-w-[390px]">
+    <main className="bg-gray-20 relative w-full">
+      <section className="absolute top-10 left-5 flex gap-[5px] items-center">
+        <MainIcon className="h-11 w-[43px]" />
+        <p className="text-h2 text-gray-100">{formatLocalDate(today)}</p>
+      </section>
+      <nav className="absolute inset-x-0 bottom-0 mx-auto max-w-[390px]">
         <NavigationBar />
       </nav>
     </main>
