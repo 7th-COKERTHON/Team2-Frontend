@@ -1,6 +1,6 @@
 interface FullButtonProps {
   title: string;
-  isActive: boolean;
+  isActive?: boolean;
   onClick: () => void;
 }
 
@@ -11,7 +11,7 @@ export const FullButton = ({
 }: FullButtonProps) => {
   return (
     <button
-      className={`h-15 w-full rounded-xl ${
+      className={`h-15 w-full cursor-pointer rounded-xl ${
         isActive ? "bg-gray-100" : "bg-gray-30"
       } flex items-center justify-center p-[10px]`}
       onClick={onClick}
