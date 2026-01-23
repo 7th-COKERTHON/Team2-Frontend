@@ -101,7 +101,7 @@ export const HabitItem = ({
 
           {/* 모달: 위치 그대로 */}
           <div className="absolute top-[20px] right-[14px] z-50">
-            <HabitMenuModal />
+            <HabitMenuModal onClose={() => setButtonClick(false)} />
           </div>
         </>
       )}
