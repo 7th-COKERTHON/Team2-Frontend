@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "username": "익명 A",
+    "badHabit": "다리 떨기",
+    "resolution": "바른 자세 유지하기",
+    "date": "2024-01-20"
+  },
+  {
+    "id": 2,
+    "username": "익명 B",
+    "badHabit": "손톱 물어뜯기",
+    "resolution": "핸드크림 자주 바르기",
+    "date": "2024-01-19"
+  },
+  {
+    "id": 3,
+    "username": "익명 C",
+    "badHabit": "야식 먹기",
+    "resolution": "6시 이후 금식",
+    "date": "2024-01-18"
+  },
+  {
+    "id": 4,
+    "username": "익명 D",
+    "badHabit": "늦잠 자기",
+    "resolution": "아침 7시 기상",
+    "date": "2024-01-18"
+  },
+  {
+    "id": 5,
+    "username": "익명 E",
+    "badHabit": "충동 구매",
+    "resolution": "가계부 쓰기",
+    "date": "2024-01-17"
+  },
+  {
+    "id": 6,
+    "username": "익명 F",
+    "badHabit": "스마트폰 중독",
+    "resolution": "스크린타임 2시간 줄이기",
+    "date": "2024-01-16"
+  },
+  {
+    "id": 7,
+    "username": "익명 G",
+    "badHabit": "물 안 마시기",
+    "resolution": "하루 2L 마시기",
+    "date": "2024-01-15"
+  },
+  {
+    "id": 8,
+    "username": "익명 H",
+    "badHabit": "자세 구부정",
+    "resolution": "스트레칭 매일 하기",
+    "date": "2024-01-14"
+  },
+  {
+    "id": 9,
+    "username": "익명 I",
+    "badHabit": "말 자르기",
+    "resolution": "끝까지 경청하기",
+    "date": "2024-01-13"
+  },
+  {
+    "id": 10,
+    "username": "익명 J",
+    "badHabit": "욕설 사용",
+    "resolution": "고운 말 쓰기",
+    "date": "2024-01-12"
+  },
+  {
+    "id": 11,
+    "username": "익명 K",
+    "badHabit": "미루는 습관",
+    "resolution": "투두리스트 작성",
+    "date": "2024-01-11"
+  },
+  {
+    "id": 12,
+    "username": "익명 L",
+    "badHabit": "군것질",
+    "resolution": "견과류로 대체하기",
+    "date": "2024-01-10"
+  },
+  {
+    "id": 13,
+    "username": "익명 M",
+    "badHabit": "엘리베이터 타기",
+    "resolution": "계단 이용하기",
+    "date": "2024-01-09"
+  },
+  {
+    "id": 14,
+    "username": "익명 N",
+    "badHabit": "탄산음료 마시기",
+    "resolution": "탄산수 마시기",
+    "date": "2024-01-08"
+  },
+  {
+    "id": 15,
+    "username": "익명 O",
+    "badHabit": "양치 건너뛰기",
+    "resolution": "식후 3분 양치",
+    "date": "2024-01-07"
+  },
+  {
+    "id": 16,
+    "username": "익명 P",
+    "badHabit": "하루종일 눕기",
+    "resolution": "산책 30분",
+    "date": "2024-01-06"
+  },
+  {
+    "id": 17,
+    "username": "익명 Q",
+    "badHabit": "약속 늦기",
+    "resolution": "10분 일찍 도착하기",
+    "date": "2024-01-05"
+  },
+  {
+    "id": 18,
+    "username": "익명 R",
+    "badHabit": "편식하기",
+    "resolution": "채소 한 입 먹기",
+    "date": "2024-01-04"
+  },
+  {
+    "id": 19,
+    "username": "익명 S",
+    "badHabit": "한숨 쉬기",
+    "resolution": "긍정적인 생각하기",
+    "date": "2024-01-03"
+  },
+  {
+    "id": 20,
+    "username": "익명 T",
+    "badHabit": "다리 꼬기",
+    "resolution": "양발 바닥에 두기",
+    "date": "2024-01-02"
+  }
+]
