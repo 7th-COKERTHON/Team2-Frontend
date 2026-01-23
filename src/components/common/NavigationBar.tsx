@@ -25,7 +25,7 @@ export const NavigationBar = () => {
           className={`${activeKey === "home" ? "text-gray-70" : "text-gray-50"} h-5 w-5`}
         />
         <p
-          className={`${activeKey === "home" ? "text-gray-70" : "text-gray-50"} text-cap`}
+          className={`${activeKey === "home" ? "text-gray-70" : "text-gray-50"} text-lab`}
         >
           홈
         </p>
@@ -42,7 +42,7 @@ export const NavigationBar = () => {
           className={`${activeKey === "explore" ? "text-gray-70" : "text-gray-50"} h-5 w-5`}
         />
         <p
-          className={`${activeKey === "explore" ? "text-gray-70" : "text-gray-50"} text-cap`}
+          className={`${activeKey === "explore" ? "text-gray-70" : "text-gray-50"} text-lab`}
         >
           탐색하기
         </p>
@@ -59,7 +59,7 @@ export const NavigationBar = () => {
           className={`${activeKey === "mypage" ? "text-gray-70" : "text-gray-50"} h-5 w-5`}
         />
         <p
-          className={`${activeKey === "mypage" ? "text-gray-70" : "text-gray-50"} text-cap`}
+          className={`${activeKey === "mypage" ? "text-gray-70" : "text-gray-50"} text-lab`}
         >
           마이페이지
         </p>
