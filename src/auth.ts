@@ -83,6 +83,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               accessToken: account.access_token,
+              refreshToken: account.refresh_token,
             }),
           });
 
