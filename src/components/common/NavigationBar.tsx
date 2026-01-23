@@ -12,7 +12,7 @@ export const NavigationBar = () => {
   const [activeKey, setActiveKey] = useState<NavBarKey>("home");
   const router = useRouter();
   return (
-    <section className="bg-gray-20 flex w-full items-center justify-center gap-25 rounded-t-[20px] px-5 pt-[15px] pb-[37px]">
+    <section className="bg-gray-10 flex w-full items-center justify-center gap-25 rounded-t-[20px] px-5 pt-[15px] pb-[37px]">
       <button
         className="flex flex-col items-center gap-[5px]"
         onClick={() => {
