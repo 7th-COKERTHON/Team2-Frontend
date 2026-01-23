@@ -4,7 +4,6 @@ import MainIcon from "@/assets/level1.svg";
 import Logo from "@/assets/logo.svg";
 
 import { LoginBtn } from "@/components/auth/LoginBtb";
-import { UserProfile } from "@/components/auth/UserProfile";
 
 export default function Login() {
   return (
@@ -18,11 +17,6 @@ export default function Login() {
           <h1 className="text-b2">내 무의식의 나쁜 습관을,</h1>
           <h1 className="text-h3 text-gray-100">찔릿</h1>
         </div>
-      </div>
-
-      {/* 프로필 영역 */}
-      <div className="mt-10">
-        <UserProfile />
       </div>
 
       {/* 로그인 버튼 */}
