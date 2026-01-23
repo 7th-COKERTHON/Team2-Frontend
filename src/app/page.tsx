@@ -1,6 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
+
 import EditIcon from "@/assets/edit.svg";
 import MainIcon from "@/assets/level1.svg";
+import PlusIcon from "@/assets/plus.svg";
 
 import { NavigationBar } from "@/components/common/NavigationBar";
 import { HabitTracker } from "@/components/home/HabitTracker";
@@ -10,8 +13,9 @@ import { formatLocalDate } from "@/utils/formatLocalDate";
 
 const Home = () => {
   const today = new Date();
+  const router = useRouter();
   return (
-    <main className="bg-gray-20 relative mb-[100px] h-screen w-full overflow-y-auto">
+    <main className="relative mb-[100px] h-screen w-full overflow-y-auto">
       <div className="h-full">
         <button className="absolute top-[63px] right-5">
           <EditIcon className="h-5 w-5" />
@@ -41,6 +45,16 @@ const Home = () => {
       <nav className="fixed inset-x-0 bottom-0 mx-auto max-w-[390px]">
         <NavigationBar />
       </nav>
+      <div className="fixed inset-x-0 bottom-[105px] z-50 mx-auto w-full max-w-[390px]">
+        <div className="flex justify-end pr-5">
+          <button
+            className="bg-gray-10 flex h-15 w-15 cursor-pointer items-center justify-center rounded-full shadow-[0_0_10px_rgba(0,0,0,0.15)]"
+            onClick={() => router.push("/habit/add")}
+          >
+            <PlusIcon className="text-pink-10" />
+          </button>
+        </div>
+      </div>
     </main>
   );
 };

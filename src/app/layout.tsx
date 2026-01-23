@@ -58,7 +58,7 @@ export default function RootLayout({
       lang="ko"
       className={`${pretendard.className} scrollbar-hide flex items-center justify-center`}
     >
-      <body className="flex h-screen w-full max-w-[390px] overflow-y-scroll shadow-2xl">
+      <body className="bg-gray-20 flex h-screen w-full max-w-[390px] overflow-y-scroll shadow-2xl">
         <ServiceWorkerRegister />
         <AuthProvider>{children}</AuthProvider>
         <OnboardingBottomSheet />
