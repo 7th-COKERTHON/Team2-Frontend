@@ -11,17 +11,17 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#000000",
     icons: [
       {
-        src: "/images/zzillit-192.png",
+        src: "/images/favicon.svg",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: "/images/zzillit-512.png",
+        src: "/images/favicon.svg",
         sizes: "512x512",
         type: "image/png",
       },
       {
-        src: "/images/zzillit-maskable.png",
+        src: "/images/favicon.svg",
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",
