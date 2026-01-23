@@ -17,6 +17,8 @@ const HabitAdd = () => {
   const handleClickClose = () => {
     if (momentText.length > 0 || habitText.length > 0) {
       setModalOpen(true);
+    } else {
+      router.push("/");
     }
   };
 
