@@ -7,9 +7,14 @@
   --color-pink-100: #f33283;
   --color-yellow: #fee500;
 
-  --color-green: #c3f767;
-  --color-purple: #b5a9ff;
-  --color-blue: #c9e4ff;
+  --color-green-10: #c3f767;
+  --color-green-20: #74a816;
+
+  --color-purple-10: #b5a9ff;
+  --color-purple-20: #5e43ff;
+
+  --color-blue-10: #c9e4ff;
+  --color-blue-20: #62b0ff;
 
   --color-gray-10: #f8f8f8;
   --color-gray-20: #f0f0f0;
