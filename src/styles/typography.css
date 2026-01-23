@@ -33,4 +33,9 @@
   --text-b4--line-height: 1.1375rem;
   --text-b4--letter-spacing: -0.00875rem;
   --text-b4--font-weight: 400;
+
+  --text-cap: 0.625rem;
+  --text-cap--line-height: 0.8125rem;
+  --text-cap--letter-spacing: -0.00625rem;
+  --text-cap--font-weight: 400;
 }
