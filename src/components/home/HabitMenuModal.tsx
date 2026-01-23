@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { HabitDeleteModal } from "./HabitDeleteModal";
+import { CommonModal } from "../common/CommonModal";
 
 interface HabitMenuModalProps {
   onClose: () => void;
@@ -20,7 +20,16 @@ export const HabitMenuModal = ({ onClose }: HabitMenuModalProps) => {
       <button className="text-b4 cursor-pointer text-gray-100">
         다짐 수정하기
       </button>
-      {deleteClick && <HabitDeleteModal onClose={onClose} />}
+      {deleteClick && (
+        <CommonModal
+          title="다짐을 삭제할까요?"
+          content={["다짐을 삭제하면", "삭제한 내용을 되돌릴 수 없습니다."]}
+          buttons={[
+            { label: "취소", onClick: () => console.log("취소") },
+            { label: "삭제", onClick: () => console.log("삭제") },
+          ]}
+        />
+      )}
     </div>
   );
 };
