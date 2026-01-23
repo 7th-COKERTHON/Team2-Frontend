@@ -1,7 +1,5 @@
 import { DefaultSession } from "next-auth";
 
-// NextAuth 제거
-
 declare module "next-auth" {
   interface Session {
     user: {
