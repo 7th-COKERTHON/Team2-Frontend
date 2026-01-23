@@ -34,8 +34,18 @@
   --text-b4--letter-spacing: -0.00875rem;
   --text-b4--font-weight: 400;
 
-  --text-cap: 0.625rem;
-  --text-cap--line-height: 0.8125rem;
-  --text-cap--letter-spacing: -0.00625rem;
+  --text-cap: 0.8125rem;
+  --text-cap--line-height: 1.05625rem;
+  --text-cap--letter-spacing: -0.00813rem;
   --text-cap--font-weight: 400;
+
+  --text-cap-b: 0.8125rem;
+  --text-cap-b--line-height: 1.05625rem;
+  --text-cap-b--letter-spacing: -0.00813rem;
+  --text-cap-b--font-weight: 700;
+
+  --text-lab: 0.625rem;
+  --text-lab--line-height: 0.8125rem;
+  --text-lab--letter-spacing: -0.00625rem;
+  --text-lab--font-weight: 400;
 }

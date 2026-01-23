@@ -11,7 +11,7 @@ export default function Login() {
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center p-5">
       <div className="flex flex-col gap-3">
         <div className="flex items-center">
-          <MainIcon className="h-[92px] w-[91px]" />
+          <MainIcon className="h-[92px] w-[91px] text-pink-50" />
           <Logo className="h-[70px] w-[114px]" />
         </div>
         <div className="flex gap-[3px]">
