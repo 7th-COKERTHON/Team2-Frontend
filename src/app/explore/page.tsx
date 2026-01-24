@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { getHabitsExplore } from "@/app/api/habit";
-// 2. 저장 액션
 import { saveHabit } from "@/app/api/habit";
 
 import Dropdown from "@/assets/dropdown.svg";

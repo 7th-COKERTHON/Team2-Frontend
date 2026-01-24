@@ -22,12 +22,10 @@ export const HabitMenuModal = ({
     try {
       setIsDeleting(true);
       await deleteHabit(habitId);
-      console.log("삭제 성공!");
       onDeleted?.(); // 삭제 후 부모에서 갱신
       onClose(); // 모달 닫기
     } catch (error) {
-      console.log("삭제 실패", error);
-      alert("삭제에 실패했습니다. 다시 시도해주세요.");
+      console.error("삭제 실패", error);
     } finally {
       setIsDeleting(false);
     }
