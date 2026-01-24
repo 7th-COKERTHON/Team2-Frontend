@@ -86,7 +86,7 @@ const Home = () => {
             className="bg-gray-10 flex h-15 w-15 cursor-pointer items-center justify-center rounded-full shadow-[0_0_10px_rgba(0,0,0,0.15)]"
             onClick={() => router.push("/habit/add")}
           >
-            <PlusIcon className="text-pink-10" />
+            <PlusIcon className="h-25 w-25 text-pink-50" />
           </button>
         </div>
       </div>
