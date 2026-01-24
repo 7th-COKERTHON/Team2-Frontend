@@ -9,17 +9,21 @@ import { INDEX_COLOR_MAP } from "@/constants/indexColor";
 import { HabitMenuModal } from "./HabitMenuModal";
 
 interface HabitItemProps {
+  habitId: number;
   title: string;
   doDays: string[];
   habitIdx: number;
   todayIndex: number;
+  onDelete: () => void;
 }
 
 export const HabitItem = ({
+  habitId,
   title,
   doDays,
   habitIdx,
   todayIndex,
+  onDelete,
 }: HabitItemProps) => {
   const colorSet = INDEX_COLOR_MAP[habitIdx % INDEX_COLOR_MAP.length];
   const { lightColor, mainColor, bgColor } = colorSet;
@@ -102,7 +106,11 @@ export const HabitItem = ({
 
           {/* 모달: 위치 그대로 */}
           <div className="absolute top-[20px] right-[14px] z-90">
-            <HabitMenuModal onClose={() => setButtonClick(false)} />
+            <HabitMenuModal
+              habitId={habitId}
+              onClose={() => setButtonClick(false)}
+              onDeleted={onDelete}
+            />
           </div>
         </>
       )}

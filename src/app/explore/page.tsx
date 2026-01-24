@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { getHabitsExplore } from "@/app/api/habit";
+// 2. 저장 액션
+import { saveHabit } from "@/app/api/habit";
 
 import Dropdown from "@/assets/dropdown.svg";
 import Level1 from "@/assets/level1.svg";
@@ -71,22 +73,32 @@ export default function ExplorePage() {
     fetchData();
   }, []);
 
+  // 기존에 작성한 saveHabit API
+
   // 2. 저장 액션
-  const handleSave = (id: number) => {
-    let updatedIds: number[];
+  const handleSave = async (id: number) => {
+    try {
+      // API 호출
+      await saveHabit(id);
 
-    if (savedIds.includes(id)) {
-      updatedIds = savedIds.filter(savedId => savedId !== id);
-    } else {
-      updatedIds = [...savedIds, id];
+      // 로컬 상태 업데이트
+      let updatedIds: number[];
+      if (savedIds.includes(id)) {
+        updatedIds = savedIds.filter(savedId => savedId !== id);
+      } else {
+        updatedIds = [...savedIds, id];
+      }
+
+      setSavedIds(updatedIds);
+      localStorage.setItem("savedFeedIds", JSON.stringify(updatedIds));
+
+      // 토스트
+      setShowToast(true);
+      if (toastTimer.current) clearTimeout(toastTimer.current);
+      toastTimer.current = setTimeout(() => setShowToast(false), 3000);
+    } catch (error) {
+      console.error(`Habit ${id} 저장 실패`, error);
     }
-
-    setSavedIds(updatedIds);
-    localStorage.setItem("savedFeedIds", JSON.stringify(updatedIds));
-
-    setShowToast(true);
-    if (toastTimer.current) clearTimeout(toastTimer.current);
-    toastTimer.current = setTimeout(() => setShowToast(false), 3000);
   };
 
   const handleGoHome = () => router.push("/");
