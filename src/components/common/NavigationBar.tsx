@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import HomeIcon from "@/assets/navbar/home.svg";
-import MyPageIcon from "@/assets/navbar/mypage.svg";
 import SearchIcon from "@/assets/navbar/search.svg";
 
 import { NavBarKey } from "@/constants/navBar";

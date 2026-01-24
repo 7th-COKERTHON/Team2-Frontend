@@ -1,5 +1,5 @@
 "use client"; // Next.js 13 app 디렉토리 기준
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { getHabitList } from "@/app/api/habit";
 
@@ -16,20 +16,22 @@ export const HabitTracker = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchHabits = async () => {
-      try {
-        const data = await getHabitList();
-        setHabits(data);
-      } catch (err) {
-        setError("다짐 목록을 불러오지 못했습니다.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchHabits();
+  const fetchHabits = useCallback(async () => {
+    setLoading(true);
+    try {
+      const data = await getHabitList();
+      setHabits(data);
+      setError(null);
+    } catch (err) {
+      setError("다짐 목록을 불러오지 못했습니다.");
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchHabits();
+  }, [fetchHabits]);
 
   if (loading) return <p className="text-gray-200">불러오는 중...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
@@ -47,10 +49,12 @@ export const HabitTracker = () => {
         return (
           <HabitItem
             key={habit.id}
+            habitId={habit.id}
             title={habit.resolution}
             doDays={doDays}
             habitIdx={idx + 1}
             todayIndex={todayIndex}
+            onDelete={fetchHabits}
           />
         );
       })}
