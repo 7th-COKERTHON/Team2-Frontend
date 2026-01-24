@@ -52,7 +52,7 @@ export default function ExplorePage() {
             oneWeekAgo.getTime() +
             Math.random() * (now.getTime() - oneWeekAgo.getTime());
           return {
-            id: idx, // 실제 API에 id가 있다면 habit.id 사용
+            id: habit.id,
             username: "익명",
             badHabit: habit.badBehavior,
             resolution: habit.resolution,
@@ -142,9 +142,6 @@ export default function ExplorePage() {
                     className="p-1 transition-transform active:scale-95"
                   >
                     {isSaved ? <ScrapFill /> : <Scrap className="h-5 w-5" />}
-                  </button>
-                  <button className="p-1">
-                    <Dropdown className="text-gray-40 h-[10px] w-[10px]" />
                   </button>
                 </div>
               </div>
