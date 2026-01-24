@@ -34,7 +34,6 @@ export default function ExplorePage() {
 
   const toastTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // 1. API 호출 + 로컬스토리지 복구
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -73,9 +72,6 @@ export default function ExplorePage() {
     fetchData();
   }, []);
 
-  // 기존에 작성한 saveHabit API
-
-  // 2. 저장 액션
   const handleSave = async (id: number) => {
     try {
       // API 호출
@@ -137,9 +133,7 @@ export default function ExplorePage() {
                   </div>
                   <div className="flex flex-col gap-[5px]">
                     <h3 className="text-h3 text-gray-100">{feed.resolution}</h3>
-                    <p className="text-body2 text-gray-70 line-clamp-1">
-                      {feed.badHabit}
-                    </p>
+                    <p className="text-body2 text-gray-70">{feed.badHabit}</p>
                   </div>
                 </div>
 
