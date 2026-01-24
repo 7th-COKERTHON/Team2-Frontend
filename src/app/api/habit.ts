@@ -36,6 +36,7 @@ export const getHabitList = async (): Promise<Habit[]> => {
     const response = await apiClient.get<HabitExploreResponse>("/habits", {
       headers: authHeader,
     });
+
     return response.data.data;
   } catch (error) {
     console.error("Habit 목록 조회 실패:", error);
@@ -63,7 +64,6 @@ export const getHabitsExplore = async (size: number = 20): Promise<Habit[]> => {
       `/habits/explore?size=${size}`,
       { headers: authHeader },
     );
-    console.log(response.data.data);
     return response.data.data;
   } catch (error) {
     console.error("Habits Explore 조회 실패:", error);

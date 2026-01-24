@@ -10,33 +10,15 @@ import { getDoDays } from "@/utils/getDoDays";
 
 import { HabitItem } from "./HabitItem";
 
-export const TodayHabit = () => {
+interface TodayHabitProps {
+  data: Habit[];
+  onDelete: () => void;
+}
+export const TodayHabit = ({ data, onDelete }: TodayHabitProps) => {
   const todayIndex = getDayIndexStartMonth(new Date());
-  const [habits, setHabits] = useState<Habit[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const fetchHabits = useCallback(async () => {
-    setLoading(true);
-    try {
-      const data = await getHabitList();
-      setHabits(data);
-      setError(null);
-    } catch (err) {
-      setError("다짐 목록을 불러오지 못했습니다.");
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchHabits();
-  }, [fetchHabits]);
-  if (loading) return <p className="text-gray-200">불러오는 중...</p>;
-  if (error) return <p className="text-red-500">{error}</p>;
 
   // 오늘의 다짐만 필터링
-  const todayHabits = habits.filter(habit => habit.isToday);
+  const todayHabits = data.filter(data => data.isToday);
   if (todayHabits.length === 0)
     return <p className="text-gray-200">오늘의 다짐이 없어요</p>;
 
@@ -53,7 +35,7 @@ export const TodayHabit = () => {
             doDays={doDays}
             habitIdx={idx + 1}
             todayIndex={todayIndex}
-            onDelete={fetchHabits}
+            onDelete={onDelete}
           />
         );
       })}
