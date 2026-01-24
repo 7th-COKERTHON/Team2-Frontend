@@ -32,6 +32,7 @@ export const HabitItem = ({
   const [modalPos, setModalPos] = useState<{ x: number; y: number } | null>(
     null,
   );
+  const [done, setDone] = useState(false);
 
   const handleMenuClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -77,21 +78,26 @@ export const HabitItem = ({
       {/* 상태 아이콘 */}
       <div className="flex gap-[12px]">
         {DAY_TO_KOREAN.map(({ key }, dayIdx) => {
-          const habitDone = dayIdx <= todayIndex && doDays.includes(key);
+          const isToday = dayIdx === todayIndex;
+          const habitDone =
+            dayIdx <= todayIndex && (doDays.includes(key) || (isToday && done));
 
           return (
-            <div
+            <button
               key={key}
               className={`flex h-8 w-8 items-center justify-center rounded-full ${
                 habitDone ? bgColor : "bg-gray-50"
-              }`}
+              } ${DAY_TO_KOREAN[todayIndex].key === key ? "cursor-pointer" : ""}`}
+              onClick={() => {
+                if (isToday) setDone(prev => !prev);
+              }}
             >
               <MainIcon
                 className={`h-[22px] w-[22px] ${
                   habitDone ? mainColor : "text-gray-70"
                 }`}
               />
-            </div>
+            </button>
           );
         })}
       </div>

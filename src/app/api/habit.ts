@@ -63,6 +63,7 @@ export const getHabitsExplore = async (size: number = 20): Promise<Habit[]> => {
       `/habits/explore?size=${size}`,
       { headers: authHeader },
     );
+    console.log(response.data.data);
     return response.data.data;
   } catch (error) {
     console.error("Habits Explore 조회 실패:", error);
