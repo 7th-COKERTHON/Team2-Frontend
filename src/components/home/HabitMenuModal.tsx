@@ -40,10 +40,6 @@ export const HabitMenuModal = ({
         다짐 삭제하기
       </button>
 
-      <button className="text-b4 cursor-pointer text-gray-100">
-        다짐 수정하기
-      </button>
-
       {deleteClick && (
         <CommonModal
           title="다짐을 삭제할까요?"
