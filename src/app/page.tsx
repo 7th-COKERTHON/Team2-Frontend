@@ -36,7 +36,9 @@ const Home = () => {
             <section className="flex flex-col gap-[15px]">
               <div className="flex flex-col items-start gap-[2px]">
                 <h1 className="text-h3 text-gray-100">오늘의 다짐</h1>
-                <p className="text-b4 text-gray-100">매일 체크하며 실천해요</p>
+                <p className="text-b4 text-gray-100">
+                  오늘은 이거 하나에 집중해봐요
+                </p>
               </div>
               <TodayHabit />
             </section>
