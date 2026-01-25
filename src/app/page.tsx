@@ -43,7 +43,6 @@ const Home = () => {
   }, [fetchHabits]);
 
   if (loading) return <p className="text-gray-200">불러오는 중...</p>;
-  if (error) return <p className="text-red-500">{error}</p>;
 
   const today = new Date();
 
@@ -54,7 +53,7 @@ const Home = () => {
           <MainIcon className="h-11 w-[43px] text-pink-50" />
           <p className="text-h2 text-gray-100">{formatLocalDate(today)}</p>
         </section>
-        {habits.length === 0 ? (
+        {fetchHabits.length === 0 ? (
           <EmptyBg />
         ) : (
           <section className="absolute inset-x-0 top-[114px] mx-auto flex flex-col gap-[25px] px-5 pb-[105px]">
@@ -80,16 +79,18 @@ const Home = () => {
       <nav className="fixed inset-x-0 bottom-0 mx-auto max-w-[390px]">
         <NavigationBar />
       </nav>
-      <div className="fixed inset-x-0 bottom-[105px] z-50 mx-auto w-full max-w-[390px]">
-        <div className="flex justify-end pr-5">
-          <button
-            className="bg-gray-10 flex h-15 w-15 cursor-pointer items-center justify-center rounded-full shadow-[0_0_10px_rgba(0,0,0,0.15)]"
-            onClick={() => router.push("/habit/add")}
-          >
-            <PlusIcon className="h-25 w-25 text-pink-50" />
-          </button>
+      {fetchHabits.length > 0 && (
+        <div className="fixed inset-x-0 bottom-[105px] z-50 mx-auto w-full max-w-[390px]">
+          <div className="flex justify-end pr-5">
+            <button
+              className="bg-gray-10 flex h-15 w-15 cursor-pointer items-center justify-center rounded-full shadow-[0_0_10px_rgba(0,0,0,0.15)]"
+              onClick={() => router.push("/habit/add")}
+            >
+              <PlusIcon className="h-25 w-25 text-pink-50" />
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 };
